@@ -1,0 +1,29 @@
+.main_heading {
+	text-align: center;
+}
+.track {
+	width: 320px;
+	height: auto;
+	/* position: relative;   */
+	display: inline-block;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	/* border: 1px solid rgb(31, 49, 12); */
+}
+
+.text-div {
+	height: 150px;
+	/* min-height: 150px; */
+	overflow: auto;
+}
+
+.twit-div {
+	min-height: 300px;
+	max-height: 300px;
+	min-width: 100px;
+}
+.track-image {
+	width: 180px;
+	height: 180px;
+}
