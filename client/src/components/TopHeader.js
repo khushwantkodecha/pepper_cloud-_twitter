@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
+//css file for topheader
 import '../css/TopHeader.css';
+//Link is used for redirecting to displying tweets page
 import { Link } from 'react-router-dom';
-import queryString from 'query-string';
-
-const { query } = queryString.parse(window.location.search);
 
 class TopHeader extends Component {
 	state = {
+		//state for storing query string
 		query : ''
 	};
+	//updating state on typing query string
 	searchHandler = (e) => {
 		const query = e.target.value;
 		this.setState({
 			query
 		});
 	};
+
 	render() {
 		return (
 			<div>
@@ -24,7 +26,6 @@ class TopHeader extends Component {
 						<i class="fas fa-bars" />
 					</label>
 					<label class="logo">Twitter</label>
-
 					<ul className="mr-auto">
 						<li>
 							<form class="form-inline my-2">
@@ -54,4 +55,5 @@ class TopHeader extends Component {
 	}
 }
 
+//exporting topheader component so it can be used in another components
 export default TopHeader;

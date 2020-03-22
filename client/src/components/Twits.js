@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+//for parsing string
 import queryString from 'query-string';
 import TopHeader from './TopHeader';
+//for api calls
 import axios from 'axios';
+//for css of tweeter componet
 import '../css/Tracks.css';
 import Loader from './Loader';
 
 class Twits extends Component {
+	//defining initial stats for app
 	state = {
 		query      : '',
 		twitts     : [],
@@ -13,16 +17,22 @@ class Twits extends Component {
 		ten_twitts : [],
 		loading    : false
 	};
+
+	//being called after firsr render
 	componentDidMount() {
+		//parsing query string from url
 		const { query } = queryString.parse(window.location.search);
+		//setting state of query
 		this.setState(
 			{
 				query
 			},
+			//to get all tweers
 			() => this.searchTwit()
 		);
 	}
 
+	//checking previous and current state to prevent from unwanted api calls
 	componentDidUpdate(prevProps, prevState) {
 		const { query } = queryString.parse(window.location.search);
 		if (this.state.query !== query) {
@@ -36,7 +46,9 @@ class Twits extends Component {
 		}
 	}
 
+	//method to get all tweets by api call
 	searchTwit = () => {
+		//payload for api call
 		const payload = {
 			query : this.state.query
 		};
@@ -44,6 +56,7 @@ class Twits extends Component {
 			this.setState({
 				loading : true
 			});
+			//calling api
 			axios({
 				url    : '/api/search',
 				method : 'POST',
@@ -81,6 +94,7 @@ class Twits extends Component {
 		}
 	};
 
+	//button click function
 	buttonClick = () => {
 		this.setState({
 			load_more_clicked : true,

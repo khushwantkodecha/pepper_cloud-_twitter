@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+//Topheader component
 import TopHeader from './TopHeader';
+//background image
 import Back from '../images/3.png';
+//css file for Home component
 import '../css/Home.css';
 
 class Home extends Component {
