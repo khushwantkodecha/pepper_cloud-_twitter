@@ -3,9 +3,9 @@
 ### procedure to run this project
 1. clone this project 
 2. move to cloned project directory
-3. run ``` npm insrall ``` command to install all the required packages for server
+3. run ``` npm install ``` command to install all the required packages for server
 4. mode to client directory using ``` cd client ``` command
-5. run ``` npm insrall ``` command to install all the required packages for client
+5. run ``` npm install ``` command to install all the required packages for client
 6. Now there are two methods to execute this project : 
         1.
             A. move to main cloned project directory (using ``` cd .. ```)
